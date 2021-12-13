@@ -6,6 +6,10 @@
         #container {
             border: 1px dotted black;
         }
+        text {
+            font-size: 10px;
+            font-family: sans-serif;
+        }
     </style>
     <script src="https://d3js.org/d3.v5.js"></script>
 </head>   
@@ -26,9 +30,23 @@
             .attr("cy",0)
             .attr("r","3")
             .attr("fill", "black");
+        var origin_label = svg.append("text")
+            .attr("id", "origin_label")
+            .attr("transform", "translate(5,8)")
+            .text("origin (0,0)");
         var plot = svg.append("g")
             .attr("id","plot")
-            .attr("transform", "translate("+margin.top+","+margin.left+")");
+            .attr("transform", "translate("+margin.left+","+margin.top+")");
+        var group = plot.append("circle")
+            .attr("id","group")
+            .attr("cx",0)
+            .attr("cx",0)
+            .attr("r","3")
+            .attr("fill", "black");
+        var g_label = plot.append("text")
+            .attr("id", "group_label")
+            .attr("transform", "translate(5,8)")            
+            .text("group ("+margin.left+","+margin.top+")");            
 
     </script>
 </body>
