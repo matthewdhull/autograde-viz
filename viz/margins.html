@@ -27,30 +27,42 @@
             .attr("id", "container")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.bottom + margin.top);
+        
+        // circle element to illustrate origin point
         var origin = svg.append("circle")
             .attr("id","origin")
             .attr("cx",0)
             .attr("cy",0)
             .attr("r","3")
             .attr("fill", "black");
+        
+        // label origin
         var origin_label = svg.append("text")
             .attr("id", "origin_label")
             .attr("x", "1%")
             .attr("y", "2%")
             .text("origin (0,0)");
+        
+        // group to hold plot visual encodings, e.g., bars, dots, etc.
         var plot = svg.append("g")
             .attr("id","plot")
             .attr("transform", "translate("+margin.left+","+margin.top+")");
+        
+        // rect element to fill and illustrate plot area
         var plot_area = plot.append("rect")
             .attr("id", "plot_area")
             .attr("width", width)
             .attr("height", height);
+        
+        // circle element to illustrate origin of group of plot area 
         var group = plot.append("circle")
             .attr("id","group")
             .attr("cx",0)
             .attr("cx",0)
             .attr("r","3")
             .attr("fill", "black");
+        
+        // label group origin
         var g_label = plot.append("text")
             .attr("id", "group_label")
             .attr("x", "1%")
