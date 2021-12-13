@@ -4,17 +4,31 @@
     <title>Margins</title>
     <style>
         #container {
-            background-color: rgb(199, 199, 199);
+            border: 1px dotted black;
         }
     </style>
     <script src="https://d3js.org/d3.v5.js"></script>
 </head>   
 <body>
     <script>
+        var margin = { top: 20, right: 20, bottom: 100, left: 80 },
+        width = 800 - margin.left - margin.right,
+        height = 400 - margin.top - margin.bottom;
+
         var svg = d3.select("body")
             .append("svg")
-            .attr("id", "container");
+            .attr("id", "container")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.bottom + margin.top);
+        var origin = svg.append("circle")
+            .attr("id","origin")
+            .attr("cx",0)
+            .attr("cy",0)
+            .attr("r","3")
+            .attr("fill", "black");
         var plot = svg.append("g")
-            .attr("id","plot");
+            .attr("id","plot")
+            .attr("transform", "translate("+margin.top+","+margin.left+")");
+
     </script>
 </body>
