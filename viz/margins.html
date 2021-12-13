@@ -6,6 +6,9 @@
         #container {
             border: 1px dotted black;
         }
+        #plot_area {
+            fill: rgb(216, 216, 216);
+        }
         text {
             font-size: 10px;
             font-family: sans-serif;
@@ -32,11 +35,16 @@
             .attr("fill", "black");
         var origin_label = svg.append("text")
             .attr("id", "origin_label")
-            .attr("transform", "translate(5,8)")
+            .attr("x", "1%")
+            .attr("y", "2%")
             .text("origin (0,0)");
         var plot = svg.append("g")
             .attr("id","plot")
             .attr("transform", "translate("+margin.left+","+margin.top+")");
+        var plot_area = plot.append("rect")
+            .attr("id", "plot_area")
+            .attr("width", width)
+            .attr("height", height);
         var group = plot.append("circle")
             .attr("id","group")
             .attr("cx",0)
@@ -45,8 +53,9 @@
             .attr("fill", "black");
         var g_label = plot.append("text")
             .attr("id", "group_label")
-            .attr("transform", "translate(5,8)")            
+            .attr("x", "1%")
+            .attr("y", "1%")
             .text("g id='plot' ("+margin.left+","+margin.top+")");            
-
+            
     </script>
 </body>
