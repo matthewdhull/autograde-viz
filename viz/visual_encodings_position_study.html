@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">    
+    <title>Visual Encoding Positioning</title>
+    <style>
+        text {
+            font-size: 10px;
+            font-family: sans-serif;
+        }
+    </style>
+    <script src="https://d3js.org/d3.v5.js"></script>
+</head>   
+<body>
+    <script>
+        var margin = { top: 20, right: 30, bottom: 30, left: 40 },
+        width = 800 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
+
+        var x_scale = d3.scaleLinear()
+            .range([0, width]);
+
+        var y_scale = d3.scaleLinear()
+            .range([height, 0]);            
+
+        var svg = d3.select("body")
+            .append("svg")
+            .attr("id", "container")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.bottom + margin.top);
+        
+        var plot = svg.append("g")
+            .attr("id","plot")
+            .attr("transform", "translate("+margin.left+","+margin.top+")");
+            
+        var x_axis = plot.append("g")
+            .attr("id", "x_axis")
+            .attr("class", "axis")
+            .attr("transform", "translate(0," + height + ")")            
+            .call(d3.axisBottom(x_scale));
+
+        var y_axis = plot.append("g")
+            .attr("id", "y_axis")
+            .attr("class", "axis")
+            .call(d3.axisLeft(y_scale));
+        
+        var symbols = plot.append("g")
+            .attr("id","symbols");
+
+        d3.dsv(",", "data/data1.csv", function(d){
+            return {
+                x: d.x,
+                y: +d.y
+            }
+        }).then(function(data){
+            x_scale.domain([0, d3.max(data, function (d) { return d.x; })]);
+            y_scale.domain([0, d3.max(data, function (d) { return d.y; })]);
+            
+            // console.log(data);
+
+            symbols.selectAll('circle')
+                .data(data)
+                .enter()
+                .append('circle')
+                .attr('cx', d => x_scale(d.x))
+                .attr('cy', d => y_scale(d.y))
+                .attr('fill', 'rgb(100,100,255)')
+                .attr('r', 3);
+        })         
+            
+    </script>
+</body>
+
