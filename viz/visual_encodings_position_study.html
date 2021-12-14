@@ -16,10 +16,10 @@
         width = 800 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
-        var x_scale = d3.scaleLinear()
+        var x = d3.scaleLinear()
             .range([0, width]);
 
-        var y_scale = d3.scaleLinear()
+        var y = d3.scaleLinear()
             .range([height, 0]);            
 
         var svg = d3.select("body")
@@ -36,24 +36,24 @@
             .attr("id", "x_axis")
             .attr("class", "axis")
             .attr("transform", "translate(0," + height + ")")            
-            .call(d3.axisBottom(x_scale));
+            .call(d3.axisBottom(x));
 
         var y_axis = plot.append("g")
             .attr("id", "y_axis")
             .attr("class", "axis")
-            .call(d3.axisLeft(y_scale));
+            .call(d3.axisLeft(y));
         
         var symbols = plot.append("g")
             .attr("id","symbols");
 
         d3.dsv(",", "data/data1.csv", function(d){
             return {
-                x: d.x,
+                x: +d.x,
                 y: +d.y
             }
         }).then(function(data){
-            x_scale.domain([0, d3.max(data, function (d) { return d.x; })]);
-            y_scale.domain([0, d3.max(data, function (d) { return d.y; })]);
+            x.domain([0, d3.max(data, function (d) { return d.x; })]);
+            y.domain([0, d3.max(data, function (d) { return d.y; })]);
             
             // console.log(data);
 
@@ -61,8 +61,8 @@
                 .data(data)
                 .enter()
                 .append('circle')
-                .attr('cx', d => x_scale(d.x))
-                .attr('cy', d => y_scale(d.y))
+                .attr('cx', d => x(d.x))
+                .attr('cy', d => y(d.y))
                 .attr('fill', 'rgb(100,100,255)')
                 .attr('r', 3);
         })         
