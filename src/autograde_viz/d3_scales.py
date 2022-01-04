@@ -49,3 +49,29 @@ def d3_scale_time(webdriver:webdriver.Chrome=None, \
                 return scale(d3.timeParse('%Y-%m-%e')('{datum}'));"
     result = webdriver.execute_script(scale_call)
     return result
+
+def d3_scale_sqrt(webdriver=webdriver.Chrome, \
+                datum:float = None, \
+                range_min:float = 0.0, \
+                range_max:float = None, \
+                domain_min:float = 0.0, \
+                domain_max:float = None, \
+                invert:bool = False)->float:
+    """
+    Constructs a d3 square-root scale and returns position.
+    Uses the Selenium webdriver (Chrome) to make a .js call
+    Set invert=True to invert the range for the scale (e.g., vertical / y-scales)
+    d3 must be loaded in the page being rendered
+    """
+    range_lower_bound = range_min
+    range_upper_bound = range_max
+    if invert:
+        range_lower_bound = range_max
+        range_upper_bound = range_min
+    linear_scale_call = f"scale = d3.scaleSqrt() \
+        .range([{range_lower_bound}, {range_upper_bound}]) \
+        .domain([{domain_min},{domain_max}]); \
+        return scale({datum});"
+    result = webdriver.execute_script(linear_scale_call)
+    return result
+
