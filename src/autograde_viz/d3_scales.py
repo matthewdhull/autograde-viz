@@ -100,3 +100,20 @@ def d3_scale_log(webdriver=webdriver.Chrome, \
     result = webdriver.execute_script(log_scale_call)
     return result
 
+def d3_scale_quantile(webdriver=webdriver.Chrome,
+                datum:int = None, 
+                domain:list = None,                     
+                range:list = None):
+    """
+    Constructs a d3 quantile scale (intended for color scale) and returns color
+    domain: list of values
+    range: list of str (hex colors) to be used.
+    Uses the selenium webdriver to make a .js call
+    d3 must be loaded in the page being rendered
+    """
+    quantile_scale_call = f"quantile_scale = d3.scaleQuantile().range({range})\
+        .domain({domain});\
+        return quantile_scale({datum});"            
+    result = webdriver.execute_script(quantile_scale_call)
+    return result
+
