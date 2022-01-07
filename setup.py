@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="autograde-viz",
-    version="0.0.1.5",
+    version="0.0.1.6",
     author="Matthew Hull",
     author_email="matthewdhull@gmail.com.com",
     description="D3 Autograding Utility",
