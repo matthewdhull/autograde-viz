@@ -87,12 +87,12 @@ class TestFiles(unittest.TestCase):
     def test_1_plot_info(self):
         """Functional Advisory Test - Plot Information"""
         try:
-            svg_height = self.driver.find_element_by_id("svg1").rect['height']
-            svg_width = self.driver.find_element_by_id("svg1").rect['width']    
+            svg_height = self.driver.find_element_by_id("container").rect['height']
+            svg_width = self.driver.find_element_by_id("container").rect['width']    
             # print(f"svg dims: {svg_width} X {svg_height}")
 
             # container group transform / translation
-            g = self.driver.find_element_by_id("svg1").find_element_by_id("container")
+            g = self.driver.find_element_by_id("container").find_element_by_id("plot")
             g_transform = g.value_of_css_property("transform")
             g_matrix = parse_css_transform_matrix(g_transform)
             g_transform_xy = css_matrix_translation(g_matrix)

@@ -15,7 +15,7 @@ from utils.dropbox_helper import DropboxConnector
 # To get an access token create a Dropbox App (https://dropbox.com/developers/apps)
 ACCESS_TOKEN = ''
 
-db = DropboxConnector(ACCESS_TOKEN)
+#db = DropboxConnector(ACCESS_TOKEN)
 
 def get_assignment_config(config_filepath):
 	with open(config_filepath, 'r') as stream:
