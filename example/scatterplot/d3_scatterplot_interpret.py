@@ -122,3 +122,13 @@ if __name__ == '__main__':
     # Circle Mark Colors
     circle_mark_colors = list(set([l.value_of_css_property("fill") for l in circle_marks]))
     circle_mark_hex_colors = [Color.from_string(c).hex for c in circle_mark_colors]
+
+    # interaction 
+    action = ActionChains(driver)
+    # check that the radius changes on mouseover/hover
+    targeted_circle_element = circle_marks[0]
+    targeted_circle_radius_0 = targeted_circle_element.get_attribute('r')
+    action.move_to_element(to_element=targeted_circle_element).perform()
+    targeted_circle_radius_1 = targeted_circle_element.get_attribute('r')
+    print(f'radius b/f hover: {targeted_circle_radius_0}, after hover: {targeted_circle_radius_1}')
+
