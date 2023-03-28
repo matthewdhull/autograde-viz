@@ -96,6 +96,7 @@ class TestFiles(unittest.TestCase):
             self.assertCountEqual(required_imports, submitted_imports, f"Found {same}/3 required imports. \nThe import {diff} was not found or could be referenced with a different path than required. \nThis will prevent required libraries from loading correctly during grading.")
         print("Found all required d3 imports.")
 
+
     @weight(0.0)
     def test_01_data_representation(self):
         """Test that there is one mark present for each required data point in the dataset."""
@@ -201,6 +202,43 @@ class TestFiles(unittest.TestCase):
         self.assertTrue(x_tolerant, "circle marks are not positioned correctly within the x-axis")
         self.assertTrue(y_tolerant, "circle marks are not positioned correctly within the y-axis")
         print("Circle marks are positioned correctly ")
+    
+    
+    @weight(2.5)
+    def test_03_mouseover_interaction(self):
+        """Test that the circle mark radius becomes larger on mouseover interaction"""
+        # Scatterplot Circle Marks
+        circle_marks = WebDriverWait(self.driver, 10) \
+            .until(EC.presence_of_element_located((By.ID, "symbols"))) \
+            .find_elements_by_tag_name("circle")        
+        
+        action = ActionChains(self.driver)
+        # check that the radius changes on mouseover/hover
+        targeted_circle_element = circle_marks[0]
+        targeted_circle_radius_0 = targeted_circle_element.get_attribute('r')
+        action.move_to_element(to_element=targeted_circle_element).perform()
+        targeted_circle_radius_1 = targeted_circle_element.get_attribute('r')
+        self.assertGreater(targeted_circle_radius_1, targeted_circle_radius_0, "Mark radius is not larger on mouseover")
+        print('Correct implementation - circle mark radius is larger on mouseover.')
+
+    @weight(2.5)
+    def test_04_mouseout_interaction(self):
+        """Test that the circle mark radius becomes smaller on mouseout event"""
+        # Scatterplot Circle Marks
+        circle_marks = WebDriverWait(self.driver, 10) \
+            .until(EC.presence_of_element_located((By.ID, "symbols"))) \
+            .find_elements_by_tag_name("circle")        
+        
+        action = ActionChains(self.driver)
+        # check that the radius changes on mouseover/hover
+        targeted_circle_element = circle_marks[0]
+        action.move_to_element(to_element=targeted_circle_element).perform()
+        targeted_circle_radius_0 = targeted_circle_element.get_attribute('r')
+        action.move_by_offset(100,100).perform()
+        targeted_circle_radius_1 = targeted_circle_element.get_attribute('r')
+        self.assertLess(targeted_circle_radius_1, targeted_circle_radius_0, "Mark radius is not smaller on mouseout")
+        print('Correct implementation - circle mark radius becomes smaller on mouseout.')
+
 
     @weight(1.5)
     def test_07_x_axis_tick_values_length(self):
@@ -225,6 +263,7 @@ class TestFiles(unittest.TestCase):
 
         print(f"Found {len(self.submitted_x_ticks)} tick values for the x-axis")
 
+
     @weight(1.5)
     def test_08_y_axis_tick_values_length(self):
         """Test for presence of the y-axis and tick values-"""
@@ -245,6 +284,7 @@ class TestFiles(unittest.TestCase):
                                  f"Incorrect number of tick values ({len(self.submitted_y_ticks)}) found for y-axis. \nVerify axis domain and tick settings.")
 
         print(f"Found {len(self.submitted_y_ticks)} tick values for the y-axis")
+
 
     @weight(1.0)
     def test_09_x_axis_label(self):
@@ -281,6 +321,7 @@ class TestFiles(unittest.TestCase):
                                  f"Retrieved text '{self.submitted_y_axis_label}' for the y-axis label is incorrect.")
         print(f"Found y-axis label: '{self.submitted_y_axis_label}'")
 
+
     @weight(0.5)
     def test_11_y_axis_label_orientation(self):
         """Test the y-axis label orientation"""
@@ -305,6 +346,7 @@ class TestFiles(unittest.TestCase):
                 else:
                     self.assertEqual(-90.0, y_axis_transform_angle, "The y-axis label needs to be rotated to align with the y-axis.")
             print(f"y-axis label rotated by: {y_axis_transform_angle} degrees.")
+
 
     @weight(0.75)
     def test_12_y_axis_tick_value_domain(self):
@@ -438,7 +480,6 @@ class TestFiles(unittest.TestCase):
                     self.assertLess(0, x_axis_tick_orientation, "The x-axis is likely NOT bottom-oriented. The x-axis tick marks should be displayed below the axis. \nCheck the x-axis orientation settings.")
         print("x-axis is likely bottom-oriented.")
 
-
     @weight(0.5)
     def test_16_chart_title(self):
         """Test for the title displayed above barplot"""
@@ -454,21 +495,3 @@ class TestFiles(unittest.TestCase):
                 self.assertEqual(str(self.solution_title).lower(), str(self.submitted_title).lower(),
                                  "Chart title: '" + self.submitted_title + "' incorrect")
         print(f"Found chart title: {self.submitted_title}")
-
-
-    # @weight(0.5)
-    # @tags("Q3.g")
-    # def test_17_title_tag(self):
-    #     """Q3.g part 2 - test the content of the html <title> tag"""
-    #     with NoStd():
-    #         try:
-    #             self.submitted_d3.title_tag = self.driver.title
-    #         except:
-    #             self.submitted_d3.title_tag = None
-
-    #         if self.submitted_d3.title_tag is None:
-    #             self.assertIsNotNone(self.submitted_d3.title_tag, "Title tag not found")
-    #         elif type(self.submitted_d3.title_tag) == str:
-    #             self.assertEqual(self.solution_d3.title_tag, str(self.submitted_d3.title_tag).lower(),
-    #                              "Title tag is incorrect")
-    #     print(f"Found <title> tag with text: {self.submitted_d3.title_tag}")
