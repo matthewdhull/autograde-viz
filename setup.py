@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="autograde-viz",
-    version="0.0.1.6",
+    version="0.0.1.8",
     author="Matthew Hull",
     author_email="matthewdhull@gmail.com.com",
     description="D3 Autograding Utility",
@@ -13,12 +13,12 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url='https://github.com/matthewdhull/autograde-viz',
     classifiers=[
-        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.11",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
-    python_requires=">=3.7",
+    python_requires=">=3.11",
 )
 
