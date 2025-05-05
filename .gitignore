@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 
 .DS_Store
+example/scatterplot/.vscode/launch.json
+example/scatterplot/sample/results.json

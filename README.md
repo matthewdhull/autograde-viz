@@ -5,7 +5,16 @@
 `conda activate <env_name>`
 
 ## Create package release
-`python3 -m build`
-`python3 -m twine upload --repository pypi dist/*` (or the newly built files in `dist/`)
+`python3 -m pip install build`
+
+`python3 -m build --sdist`
+
+`python3 -m build --wheel`
+
+
+`twine check dist/*`
+
+`twine upload dist/*` (or the newly built files in `dist/`)
+
 username: `__token__`
 password: api token

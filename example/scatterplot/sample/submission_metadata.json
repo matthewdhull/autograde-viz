@@ -1,0 +1,225 @@
+{
+   "assignment_id":null,
+   "assignment":{
+      "due_date":"2019-08-28T13:00:00.000000-07:00",
+      "group_size":null,
+      "title":"Scatterplot",
+      "group_submission":false,
+      "release_date":"2019-08-15T13:00:00.000000-07:00",
+      "outline":[
+         {
+            "index":1,
+            "weight":"100.0",
+            "title":"Autograder",
+            "content":[
+
+            ],
+            "parent_id":null,
+            "type":"ProgrammingQuestion",
+            "id":2066206
+         }
+      ],
+      "total_points":"100.0",
+      "id":228415,
+      "late_due_date":null
+   },
+   "created_at":"2020-11-18T14:20:00.000000+01:00",
+   "users":[
+      {
+         "email":"mksmsrkn@gmail.com",
+         "sid":"999999999",
+         "id":1170976,
+         "name":"Maksim Sorokin (Test Student)"
+      }
+   ],
+   "previous_submissions":[
+      {
+         "score":"35.0",
+         "results":{
+            "tests":[
+               {
+                  "name":"Check submitted files",
+                  "tags":null,
+                  "number":null,
+                  "visibility":null,
+                  "score":0.0,
+                  "output":"Missing: player_submission.py\nTest Failed: 1 != 0 : Missing some required files!",
+                  "extra_data":null,
+                  "max_score":1.0
+               },
+               {
+                  "name":"Definitely better than RandomPlayer",
+                  "tags":null,
+                  "number":null,
+                  "visibility":null,
+                  "score":30.0,
+                  "output":"Inside test_beats_random\nGame  1  win # 1\nrestarting the game, due to unfair initial position\nGame  2  win # 2\nrestarting the game, due to unfair initial position\nrestarting the game, due to unfair initial position\nGame  3  win # 3\nGame  4  loss # 1\nGame  5  win # 4\nGame  6  win # 5\nGame  7  win # 6\nGame  8  win # 7\nGame  9  win # 8\nGame  10  win # 9\nrestarting the game, due to unfair initial position\nGame  11  win # 10\nGame  12  win # 11\nrestarting the game, due to unfair initial position\nGame  13  win # 12\nGame  14  win # 13\nGame  15  win # 14\nGame  16  win # 15\nGame  17  win # 16\nGame  18  win # 17\nGame  19  win # 18\nGame  20  win # 19\nWin Ratio:  0.95",
+                  "extra_data":null,
+                  "max_score":30.0
+               },
+               {
+                  "name":"Test output of OpenMoveEvalFn",
+                  "tags":null,
+                  "number":null,
+                  "visibility":null,
+                  "score":5.0,
+                  "output":"Testing the OpenMoveEvalFn\nIs OpenMoveEvalFn correct =  True",
+                  "extra_data":null,
+                  "max_score":5.0
+               }
+            ],
+            "execution_time":130.4,
+            "visibility":"visible",
+            "score":35.0,
+            "stdout_visibility":"hidden",
+            "output":"Submission 0 out of 2 during 60 minute interval",
+            "extra_data":null,
+            "leaderboard":[
+
+            ]
+         },
+         "submission_time":"2019-08-16T14:21:15.652935-07:00"
+      },
+      {
+         "score":"35.0",
+         "results":{
+            "tests":[
+               {
+                  "name":"Check submitted files",
+                  "tags":null,
+                  "number":null,
+                  "visibility":null,
+                  "score":0.0,
+                  "output":"Missing: player_submission.py\nTest Failed: 1 != 0 : Missing some required files!",
+                  "extra_data":null,
+                  "max_score":1.0
+               },
+               {
+                  "name":"Definitely better than RandomPlayer",
+                  "tags":null,
+                  "number":null,
+                  "visibility":null,
+                  "score":30.0,
+                  "output":"Inside test_beats_random\nGame  1  win # 1\nGame  2  win # 2\nrestarting the game, due to unfair initial position\nrestarting the game, due to unfair initial position\nGame  3  win # 3\nrestarting the game, due to unfair initial position\nGame  4  win # 4\nGame  5  win # 5\nGame  6  win # 6\nGame  7  win # 7\nGame  8  win # 8\nGame  9  win # 9\nGame  10  win # 10\nGame  11  win # 11\nGame  12  win # 12\nGame  13  win # 13\nGame  14  win # 14\nrestarting the game, due to unfair initial position\nGame  15  win # 15\nGame  16  win # 16\nGame  17  win # 17\nGame  18  win # 18\nGame  19  win # 19\nGame  20  win # 20\nWin Ratio:  1.0",
+                  "extra_data":null,
+                  "max_score":30.0
+               },
+               {
+                  "name":"Test output of OpenMoveEvalFn",
+                  "tags":null,
+                  "number":null,
+                  "visibility":null,
+                  "score":5.0,
+                  "output":"Testing the OpenMoveEvalFn\nIs OpenMoveEvalFn correct =  True",
+                  "extra_data":null,
+                  "max_score":5.0
+               }
+            ],
+            "execution_time":113.87,
+            "visibility":"visible",
+            "score":35.0,
+            "stdout_visibility":"hidden",
+            "output":"Submission 0 out of 2 during 60 minute interval",
+            "extra_data":null,
+            "leaderboard":[
+
+            ]
+         },
+         "submission_time":"2019-08-16T16:03:16.126917-07:00"
+      },
+      {
+         "score":"35.0",
+         "results":{
+            "tests":[
+               {
+                  "name":"Check submitted files",
+                  "tags":null,
+                  "number":null,
+                  "visibility":null,
+                  "score":0.0,
+                  "output":"Missing: player_submission.py\nTest Failed: 1 != 0 : Missing some required files!",
+                  "extra_data":null,
+                  "max_score":1.0
+               },
+               {
+                  "name":"Definitely better than RandomPlayer",
+                  "tags":null,
+                  "number":null,
+                  "visibility":null,
+                  "score":30.0,
+                  "output":"Inside test_beats_random\nGame  1  win # 1\nrestarting the game, due to unfair initial position\nGame  2  win # 2\nGame  3  win # 3\nGame  4  win # 4\nGame  5  win # 5\nrestarting the game, due to unfair initial position\nrestarting the game, due to unfair initial position\nrestarting the game, due to unfair initial position\nGame  6  win # 6\nGame  7  win # 7\nGame  8  win # 8\nrestarting the game, due to unfair initial position\nGame  9  win # 9\nGame  10  win # 10\nGame  11  win # 11\nGame  12  win # 12\nGame  13  win # 13\nGame  14  win # 14\nGame  15  win # 15\nGame  16  win # 16\nGame  17  win # 17\nGame  18  win # 18\nGame  19  win # 19\nGame  20  win # 20\nWin Ratio:  1.0",
+                  "extra_data":null,
+                  "max_score":30.0
+               },
+               {
+                  "name":"Test output of OpenMoveEvalFn",
+                  "tags":null,
+                  "number":null,
+                  "visibility":null,
+                  "score":5.0,
+                  "output":"Testing the OpenMoveEvalFn\nIs OpenMoveEvalFn correct =  True",
+                  "extra_data":null,
+                  "max_score":5.0
+               }
+            ],
+            "execution_time":116.1,
+            "visibility":"visible",
+            "score":35.0,
+            "stdout_visibility":"hidden",
+            "output":"Submission 1 out of 2 during 60 minute interval",
+            "extra_data":null,
+            "leaderboard":[
+
+            ]
+         },
+         "submission_time":"2019-08-16T23:59:00.319622-07:00"
+      },
+      {
+         "score":"35.0",
+         "results":{
+            "tests":[
+               {
+                  "name":"Check submitted files",
+                  "tags":null,
+                  "number":null,
+                  "visibility":null,
+                  "score":0.0,
+                  "output":"Missing: player_submission.py\nTest Failed: 1 != 0 : Missing some required files!",
+                  "extra_data":null,
+                  "max_score":1.0
+               },
+               {
+                  "name":"Definitely better than RandomPlayer",
+                  "tags":null,
+                  "number":null,
+                  "visibility":null,
+                  "score":30.0,
+                  "output":"Inside test_beats_random\nGame  1  win # 1\nGame  2  win # 2\nGame  3  win # 3\nrestarting the game, due to unfair initial position\nGame  4  win # 4\nGame  5  win # 5\nGame  6  win # 6\nrestarting the game, due to unfair initial position\nGame  7  win # 7\nrestarting the game, due to unfair initial position\nGame  8  win # 8\nGame  9  win # 9\nrestarting the game, due to unfair initial position\nrestarting the game, due to unfair initial position\nGame  10  win # 10\nGame  11  win # 11\nGame  12  win # 12\nGame  13  win # 13\nGame  14  win # 14\nGame  15  win # 15\nGame  16  win # 16\nGame  17  win # 17\nGame  18  win # 18\nGame  19  win # 19\nGame  20  win # 20\nWin Ratio:  1.0",
+                  "extra_data":null,
+                  "max_score":30.0
+               },
+               {
+                  "name":"Test output of OpenMoveEvalFn",
+                  "tags":null,
+                  "number":null,
+                  "visibility":null,
+                  "score":5.0,
+                  "output":"Testing the OpenMoveEvalFn\nIs OpenMoveEvalFn correct =  True",
+                  "extra_data":null,
+                  "max_score":5.0
+               }
+            ],
+            "execution_time":139.06,
+            "visibility":"visible",
+            "score":35.0,
+            "stdout_visibility":"hidden",
+            "output":"Submission 1 out of 2 during 60 minute interval",
+            "extra_data":null,
+            "leaderboard":[
+
+            ]
+         },
+         "submission_time":"2019-08-16T23:59:02.319622-07:00"
+      }
+   ]
+}
